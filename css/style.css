@@ -2,12 +2,12 @@ body, html {
     height: 100%;
     margin: 0;
     display: flex;
-    align-items: flex-start; /* Align to the top */
+    align-items: flex-start; 
     justify-content: center;
-    background: #202020; /* Dark grey background */
+    background: #202020; 
     font-family: 'Arial', sans-serif;
     color: white;
-    padding-top: 5%; /* Add some space at the top */
+    padding-top: 5%; 
 }
 
 .content {
@@ -19,16 +19,16 @@ body, html {
 
 h1 {
     margin: 0 0 30px 0;
-    font-size: 6rem; /* Much larger text for the name */
-    font-weight: bold; /* Optional: makes the text bold */
+    font-size: 6rem; 
+    font-weight: bold; 
 }
 
 .links a {
     margin: 0 15px;
     display: inline-block;
     transition: color 0.3s, transform 0.3s;
-    color: white; /* Text color */
-    text-decoration: none; /* Remove underline */
+    color: white; 
+    text-decoration: none; 
 }
 
 .links a:hover {
@@ -36,7 +36,7 @@ h1 {
 }
 
 .icon img {
-    height: 50px; /* Icon size */
+    height: 50px; 
     transition: filter 0.3s, transform 0.3s;
 }
 
@@ -48,50 +48,50 @@ h1 {
 
 
 .project {
-    background-color: #2a2a2a; /* Slightly lighter than the page background for contrast */
+    background-color: #2a2a2a; 
     padding: 20px;
     margin: 20px auto;
-    width: 80%; /* Set a max-width for each project widget */
-    border-radius: 10px; /* Rounded corners */
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* Soft shadow for depth */
-    transition: transform 0.3s, box-shadow 0.3s; /* Smooth transition for hover effects */
-    display: block; /* Change display to block to make the entire area clickable */
-    text-decoration: none; /* Remove underline from links */
-    color: white; /* Set text color for the content inside the link */
-    transition: background-color 0.3s, transform 0.3s; /* Smooth transition for hover effects */
+    width: 80%; 
+    border-radius: 10px; 
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1); 
+    transition: transform 0.3s, box-shadow 0.3s; 
+    display: block; 
+    text-decoration: none; 
+    color: white; 
+    transition: background-color 0.3s, transform 0.3s; 
 }
 
 .project:hover {
-    background-color: #333; /* Slightly lighter background on hover */
-    transform: translateY(-5px); /* Slight lift effect on hover */
-    box-shadow: 0 6px 12px rgba(0,0,0,0.2); /* Enhanced shadow on hover */
+    background-color: #333; 
+    transform: translateY(-5px); 
+    box-shadow: 0 6px 12px rgba(0,0,0,0.2); 
 }
 
 .project-image {
-    max-width: 100%; /* Make sure the image is responsive and doesn't overflow its container */
-    height: auto; /* Maintain aspect ratio */
-    border-radius: 5px; /* Slight rounding of corners on the image */
+    max-width: 100%;
+    height: auto; 
+    border-radius: 5px; 
 }
 
 .project-title {
-    color: white; /* Title color */
-    margin: 10px 0; /* Space between image and title */
+    color: white; 
+    margin: 10px 0; 
 }
 
 .project-description {
-    color: #ccc; /* Lighter text color for the description */
-    font-size: 1rem; /* Adjust the size as needed */
+    color: #ccc; 
+    font-size: 1rem; 
 }
 
 .back-arrow {
     position: absolute;
     top: 1rem;
     left: 1rem;
-    font-size: 1.5rem; /* Adjust size as needed */
+    font-size: 1.5rem; 
     padding: 0.5rem;
     color: white;
     text-decoration: none;
-    z-index: 10; /* Ensure it's above other content */
+    z-index: 10; 
 }
 
 @keyframes floatUp {
