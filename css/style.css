@@ -1059,8 +1059,11 @@ input[type="text"] {
   margin-bottom: 30px;
 }
 
-
-
+#fh5co-consult input::placeholder,
+#fh5co-consult textarea::placeholder {
+    color: rgb(255, 184, 126); 
+    opacity: 1; 
+}
 
 #map {
   width: 100%;
@@ -1272,7 +1275,7 @@ input[type="text"] {
 
 .form-control {
   box-shadow: none;
-  background: transparent;
+  background: rgba(245, 76, 76, 0.106);
   color:white;
 
   border: 2px solid rgba(0, 0, 0, 0.1);
