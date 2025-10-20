@@ -28,7 +28,7 @@ export default function AboutMe() {
             <p className="mt-4 text-lg text-gray-500">I&apos;m Ritvik Thakur, a software engineer and CS + Math student at UMD. I build full-stack and AI/ML projects—shipping fast, writing clean, typed code. Recently: cybersecurity automation, data pipelines, and vision/ML systems.</p>
           </div>
           <div className="flex-none mx-auto">
-            <Image className="rounded-full object-cover" src="/me.JPG" alt="Ritvik Thakur - Software Engineer and CS + Math student at UMD" height={208} width={208} />
+            <Image className="rounded-full object-cover" src="/me.jpg" alt="Profile Picture" height={208} width={208} />
           </div>
         </div>
         <div className="@container">
