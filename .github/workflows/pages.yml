@@ -2,13 +2,22 @@ name: Build & Deploy Next.js to Pages
 on:
   push:
     branches: [ main ]
+
 permissions:
   contents: write
   pages: write
   id-token: write
+
+# ✅ Dummy env so Postmark code doesn't crash during build
+env:
+  POSTMARK_SERVER_TOKEN: "dummy"
+  POSTMARK_FROM_EMAIL: "no-reply@example.com"
+  CONTACT_TO_EMAIL: "no-reply@example.com"
+
 concurrency:
   group: "pages"
   cancel-in-progress: true
+
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -24,6 +33,7 @@ jobs:
       - uses: actions/upload-pages-artifact@v3
         with:
           path: ./out
+
   deploy:
     needs: build
     runs-on: ubuntu-latest
@@ -33,4 +43,3 @@ jobs:
     steps:
       - id: deployment
         uses: actions/deploy-pages@v4
-
