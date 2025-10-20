@@ -1,0 +1,174 @@
+import { AppSolution, Border, Button, Container, FadeIn, FadeInStagger, Section } from '@/components';
+import Image from 'next/image';
+import { robustVision } from '../../../../public/projects'
+
+export const appData = {
+  industry: 'Computer Vision',
+  title: 'Robust Vision System',
+  description: 'Comprehensive computer vision system featuring GMM+EM segmentation, panoramic stitching, 3D reconstruction, and stereo depth estimation.',
+  image: robustVision,
+  date: '2024-11',
+  service: 'Computer Vision System',
+  url: '#',
+  pathname: '/apps/robust-vision',
+  framework: 'python',
+};
+
+export const sections = [
+  { index: 0, title: 'About', id: 'about' },
+  { index: 1, title: 'Challenge', id: 'challenge' },
+  { index: 2, title: 'Solution', id: 'solution' },
+  { index: 3, title: 'Technical Details', id: 'technical' },
+  { index: 4, title: 'Technologies', id: 'technologies' },
+];
+
+export const metadata = {
+  title: `${appData.title}`,
+  description: appData.description,
+};
+
+export const technologies = [
+  {
+    name: 'Python',
+    image: '/logos/python-logo.png',
+  },
+  {
+    name: 'NumPy',
+    image: '/logos/numpy-logo.png',
+  },
+  {
+    name: 'OpenCV',
+    image: '/logos/opencv-logo.png',
+  },
+  {
+    name: 'Matplotlib',
+    image: '/logos/matplotlib-logo.png',
+  },
+  {
+    name: 'Pandas',
+    image: '/logos/pandas-logo.png',
+  },
+];
+
+<Container>
+
+<Border className="my-8" />
+
+  <Section id="challenge">
+    ## Challenge
+
+    Develop a comprehensive computer vision system with multiple complex components:
+    
+    - **Object Segmentation**: Separate objects from background using GMM+EM with ~95% accuracy
+    - **Panoramic Stitching**: Stitch multiple images together using feature matching and RANSAC
+    - **3D Reconstruction**: Build 3D structures from 2D stereo images
+    - **Depth Estimation**: Calculate precise depth maps from stereo camera pairs
+    - **Feature Matching**: Implement efficient corner detection and descriptor matching
+    - **Handle Edge Cases**: Manage varying lighting, orientations, and complex scenes
+
+  </Section>
+
+<Border className="my-8" />
+
+<Section id="solution">
+
+## Solution
+
+<AppSolution href={appData.url}>
+  
+**Part 1: Object Segmentation with GMM+EM**
+- Implemented custom Gaussian Mixture Model with 5 gaussians for robust color-based segmentation
+- Used HSV color space for intuitive thresholding and BGR for GMM training
+- Achieved ~95% accuracy in separating objects from complex backgrounds
+- Handled varying lighting conditions and similar-colored objects (oranges vs apples)
+
+**Part 2: Panoramic Image Stitching**
+- Implemented Harris corner detection with Adaptive Non-Maximal Suppression (ANMS)
+- Created 40x40 feature descriptors with Gaussian blur and normalization
+- Used vectorized NumPy operations for efficient SSD-based feature matching
+- Applied RANSAC with homography estimation for robust outlier rejection
+- Developed cumulative homography approach for multi-image stitching
+
+**Part 3: 3D Structure from Motion**
+- Implemented two-view reconstruction using stereo image pairs
+- Applied fundamental matrix estimation with RANSAC outlier rejection
+- Calculated essential matrix and camera pose estimation
+- Performed linear triangulation for 3D point cloud generation
+- Implemented cheirality condition checking for valid 3D points
+
+**Part 4: Stereo Depth Estimation**
+- Developed world-to-camera transformation computation
+- Implemented image rectification for horizontal alignment
+- Created efficient patch extraction with boundary handling
+- Built SSD-based disparity computation with left-right consistency checking
+- Generated accurate depth maps and 3D point clouds
+
+</AppSolution>
+
+</Section>
+
+<Border className="my-8" />
+
+<Section id="technical">
+
+## Technical Implementation Details
+
+### GMM+EM Segmentation
+- **Color Space**: HSV for initial masking, BGR for GMM training with normalization
+- **Initialization**: Random scaled identity matrices for covariance, 5 gaussians
+- **Optimization**: Trial and error approach to determine optimal gaussian count
+- **Challenges**: Lighting variations, similar colors (orange vs apple pixels)
+
+### Panoramic Stitching Pipeline
+- **Corner Detection**: Harris corner detector with cv2.dilate() for emphasis
+- **ANMS**: Vectorized NumPy operations for efficient distance calculations
+- **Feature Descriptors**: 40x40 patches with Gaussian blur, resized to 8x8, normalized
+- **Feature Matching**: SSD with Lowe's ratio test (threshold 0.7)
+- **RANSAC**: Homography estimation with threshold value of 10 for inlier detection
+- **Multi-image Stitching**: Cumulative homography matrices for proper alignment
+
+### 3D Reconstruction
+- **Two-View SfM**: Fundamental matrix estimation with RANSAC outlier rejection
+- **Camera Pose**: Essential matrix calculation and pose estimation
+- **Triangulation**: Linear triangulation with cheirality condition checking
+- **Point Cloud**: 3D structure generation from matched feature points
+
+### Stereo Depth Estimation
+- **Rectification**: Homography-based image alignment for horizontal correspondence
+- **Patch Extraction**: Overlapping patches with zero padding for boundaries
+- **SSD Matching**: Vectorized similarity computation across RGB channels
+- **Disparity Map**: Left-right consistency checking for reliable matches
+- **Depth Calculation**: f·B/disparity formula with 3D point cloud back-projection
+
+</Section>
+
+<Border className="my-8" />
+
+<Section id="technologies">
+
+## Technologies
+
+<FadeInStagger className="flex gap-4 mt-6 flex-wrap" faster once>
+  {technologies.map((tech) => (
+    <FadeIn key={tech.name}>
+      <div className="mt-auto">
+        <Image
+          src={tech.image}
+          className="object-contain rounded-md m-auto"
+          alt={`${tech.name} logo`}
+          height={64}
+          width={64}
+          style={{
+            width: 64,
+            height: 64,
+          }}
+        />
+        <h4 className="text-sm font-semibold tracking-tight text-[#525df3] text-center bg-white rounded-full w-min px-2 m-2 mx-auto">{tech.name}</h4>
+      </div>
+    </FadeIn>
+  ))}
+</FadeInStagger>
+
+</Section>
+
+</Container>
