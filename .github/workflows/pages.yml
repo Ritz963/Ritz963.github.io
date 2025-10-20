@@ -10,9 +10,10 @@ permissions:
 
 # ✅ Dummy env so Postmark code doesn't crash during build
 env:
-  POSTMARK_SERVER_TOKEN: "dummy"
-  POSTMARK_FROM_EMAIL: "no-reply@example.com"
-  CONTACT_TO_EMAIL: "no-reply@example.com"
+  POSTMARK_SERVER_CLIENT: "dummy"
+  EMAIL_FROM: "no-reply@example.com"
+  EMAIL_TO: "no-reply@example.com"
+
 
 concurrency:
   group: "pages"
