@@ -119,7 +119,7 @@ export default function Index() {
                 </span>{' '}
                 / &#8205; <AnimatedTitle />
               </div>
-              <p className='max-w-3xl'>I'm Ritvik Thakur, a software engineer and CS + Math student at UMD. I build full-stack and AI/ML projects—shipping fast, writing clean, typed code, and focusing on reliability and UX. Recently: cybersecurity automation, data pipelines, and vision/ML systems.</p>
+              <p className='max-w-3xl'>I’m Ritvik Thakur, a software engineer and CS + Math student at UMD. I build full-stack and AI/ML projects—shipping fast, writing clean, typed code, and focusing on reliability and UX. Recently: cybersecurity automation, data pipelines, and vision/ML systems.</p>
             </FadeIn>
 
             <Socials />
