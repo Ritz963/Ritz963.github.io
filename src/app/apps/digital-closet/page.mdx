@@ -6,7 +6,7 @@ import { digitalCloset } from '../../../../public/projects'
 export const appData = {
   industry: 'Fashion Tech',
   title: 'Digital Closet App',
-  description: 'A digital wardrobe management system that automatically identifies clothing items, brands, colors, and estimates prices from photos.',
+  description: 'A digital wardrobe with image-based clothing identification, outfit previews, and saved closets.',
   image: digitalCloset,
   date: '2024-12',
   service: 'Full-Stack Web App',
@@ -45,14 +45,6 @@ export const technologies = [
     image: '/logos/python-logo.png',
   },
   {
-    name: 'PyTorch',
-    image: '/logos/pytorch-logo.png',
-  },
-  {
-    name: 'OpenCV',
-    image: '/logos/opencv-logo.png',
-  },
-  {
     name: 'AWS S3',
     image: '/logos/s3-logo.png',
   },
@@ -74,7 +66,7 @@ export const technologies = [
     Create a digital wardrobe solution that allows users to:
     
     - Take photos of clothing items and automatically identify what they are
-    - Detect brand, color, and estimate price of clothing items
+    - Identify brand, color, and garment type from clothing images
     - Organize outfits into different closets (summer, business casual, etc.)
     - Save and manage outfit combinations digitally
     - Provide an intuitive interface for wardrobe management
@@ -89,11 +81,9 @@ export const technologies = [
 
 <AppSolution href={appData.url}>
   
-Built a comprehensive digital closet management system that revolutionizes how users organize their wardrobes. Users simply take photos of their clothing items, and the app automatically identifies the item type, brand, color, and estimates the price using advanced computer vision techniques.
-
-The system features multiple closet organization (summer, business casual, etc.) allowing users to categorize and save complete outfits. The app provides an intuitive interface for managing a digital wardrobe, making it easy to plan outfits and track clothing items without physical storage constraints.
-
-Key features include automatic clothing recognition, brand detection, color analysis, price estimation, and flexible closet organization system.
+- Built an Express/Python upload pipeline with background removal, S3 storage, and Firestore persistence.
+- Inferred brand, color, and garment type by frequency-matching titles from SerpAPI reverse-image search.
+- Built React outfit previews with Firebase Auth, outfit saving, and live Firestore closet updates.
 
 </AppSolution>
 

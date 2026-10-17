@@ -113,3 +113,5 @@ h1 { font-size: clamp(34px, 4.5vw, 44px); font-weight: 500; line-height: 1.2; le
 .experience-panel-inner { min-height: 0; overflow: hidden; }
 .experience-row .expand { transition: transform 220ms ease; }
 @media (prefers-reduced-motion: reduce) { .experience-panel, .experience-row .expand { transition: none; } }
+.case-study .technology-list { display: flex; flex-wrap: wrap; gap: 10px; list-style: none; padding: 0; }
+.case-study .technology-list .technology-label { margin: 0; }
