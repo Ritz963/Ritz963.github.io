@@ -1,7 +1,7 @@
 export const experience = [
   {
     title: 'University of Maryland, College Park — B.S. Computer Science; Double Major in Mathematics',
-    date: '',
+    date: 'May 2026',
     description: [
       'GPA: 3.76/4.00',
       'Relevant coursework: Algorithms; Computer Systems; Machine Learning; Computer Vision; Data Science',
@@ -9,12 +9,22 @@ export const experience = [
     image: { url: '/work/umd-logo.png', height: 96, width: 96, className: 'rounded-none' },
   },
   {
-    title: 'Cybersecurity Engineering Intern — Ernst & Young',
+    title: 'Software Development Engineer Intern — Amazon',
+    date: 'Jun 2026 – Aug 2026',
+    description: [
+      'Built a Java/AWS Lambda system exposing removal reasons for 1M+ monthly takedowns in seller dashboards.',
+      'Consolidated two SNS-driven Lambda services, cutting end-to-end latency by 30% and annual costs by $50K.',
+      'Modeled takedown/remediation data and refactored 10+ legacy modules using AI-assisted development.',
+      'Shipped production changes with unit/integration tests, safeguard flags, rollback procedures, and handoff docs.',
+    ],
+  },
+  {
+    title: 'Cybersecurity Consulting Intern — EY (Ernst & Young)',
     date: 'Jun 2025 – Aug 2025',
     description: [
-      'Built NIST SSDF filter automation, cutting manual review time 80–90% and improving audit traceability.',
-      'Co-authored AppSec policy aligned to regulatory standards, speeding client approvals by 1–2 weeks.',
-      'Integrated compliance checks into CI/CD pipelines, catching vulnerabilities earlier and reducing release delays.',
+      "Automated NIST SSDF requirement mapping and retrieval for client staff, cutting manual review time 80–90%.",
+      "Reduced SharePoint API calls through per-run caching and single-pass filtering of relevant security requirements.",
+      "Co-authored AppSec policy and governance documentation for a biotech application processing customer PII.",
     ],
     image: { url: '/work/ey-logo.png', height: 96, width: 96, className: 'rounded-none' },
   },
@@ -22,9 +32,10 @@ export const experience = [
     title: 'Full Stack Engineer — MITRE Sponsored Project',
     date: 'Jan 2025 – May 2025',
     description: [
-      'Built containerized orchestration app on Elasticsearch, centralizing data and cutting triage time 25–40%.',
-      'Designed NiFi pipelines that automated malware analysis, boosting throughput 3–5×.',
-      'Stored tool outputs in Elasticsearch as a vector store; integrated Ollama embeddings (Llama 3-1B) for air-gapped RAG.',
+      "Integrated 7 security tools using Docker and Apache NiFi data pipelines, reducing security triage time 25–40%.",
+      "Built FastAPI microservices with REST APIs for security-tool data retrieval, reducing latency by 16%.",
+      "Integrated Llama 3, Ollama, and Elasticsearch for retrieval-augmented generation (RAG) on security-tool results.",
+      "Developed an interactive Next.js dashboard with Kibana, enabling real-time visualization and security insights.",
     ],
     image: { url: '/work/mitre-logo.png', height: 96, width: 96, className: '' },
   },
@@ -41,8 +52,8 @@ export const experience = [
     title: 'Undergraduate Research Assistant — University of Maryland',
     date: 'Aug 2024 – Dec 2024',
     description: [
-      'Processed financial/policy data for model training; streamlined ingestion/cleaning workflows.',
-      'Built Python models forecasting lobbying from 10k+ records, improving data quality and reliability.',
+      "Built Python pipelines to clean and normalize financial data, streamlining ingestion and preprocessing workflows.",
+      "Developed regression models on 10k+ lobbying records with Pandas and NumPy, improving forecast accuracy.",
     ],
     image: { url: '/work/umd-logo.png', height: 96, width: 96, className: '' },
   },
