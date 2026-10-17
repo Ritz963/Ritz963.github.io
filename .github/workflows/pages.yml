@@ -2,21 +2,17 @@ name: Build & Deploy Next.js to Pages
 on:
   push:
     branches: [ main ]
+  pull_request:
+    branches: [ main ]
+  workflow_dispatch:
 
 permissions:
-  contents: write
+  contents: read
   pages: write
   id-token: write
 
-# ✅ Dummy env so Postmark code doesn't crash during build
-env:
-  POSTMARK_SERVER_CLIENT: "dummy"
-  EMAIL_FROM: "no-reply@example.com"
-  EMAIL_TO: "no-reply@example.com"
-
-
 concurrency:
-  group: "pages"
+  group: "pages-${{ github.ref }}"
   cancel-in-progress: true
 
 jobs:
@@ -30,12 +26,12 @@ jobs:
       - run: npm ci
       - run: npm run build
       - run: touch out/.nojekyll
-      - run: cp out/index.html out/404.html || true
       - uses: actions/upload-pages-artifact@v3
         with:
           path: ./out
 
   deploy:
+    if: github.ref == 'refs/heads/main' && github.event_name != 'pull_request'
     needs: build
     runs-on: ubuntu-latest
     environment:

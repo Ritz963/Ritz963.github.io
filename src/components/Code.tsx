@@ -1,7 +1,7 @@
 'use client';
 
 import clsx from 'clsx';
-import { Children, useEffect, useState } from 'react';
+import { Children, isValidElement, useEffect, useState } from 'react';
 import Button from './Button';
 
 function ClipboardIcon(props: React.ComponentPropsWithoutRef<'svg'>) {
@@ -59,8 +59,12 @@ function CopyButton({ code }: { code: string }) {
 
 function CodePanel({ children }: { children: React.ReactNode; code?: string }) {
   let child = Children.only(children);
-  // @ts-ignore
-  let code = child?.props?.code ?? '';
+  function textOf(node: React.ReactNode): string {
+    if (typeof node === 'string' || typeof node === 'number') return String(node);
+    if (isValidElement(node)) return textOf(node.props.children);
+    return Children.toArray(node).map(textOf).join('');
+  }
+  const code = textOf(child);
   return (
     <div className="group dark:bg-white/2.5">
       <div className="relative">
@@ -88,6 +92,5 @@ export function CodeGroup({ children, slug, ...props }: React.ComponentPropsWith
 }
 
 export function Code({ children, ...props }: React.ComponentPropsWithoutRef<'code'>) {
-  // @ts-ignore
-  return <code {...props} dangerouslySetInnerHTML={{ __html: children }} />;
+  return <code {...props}>{children}</code>;
 }

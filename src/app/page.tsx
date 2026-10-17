@@ -1,151 +1,57 @@
-import { AboutMe, AnimatedTitle, Border, ContactForm, Container, FadeIn, GridPattern, MyWork, Section, SectionHeader, Skills, Socials, Stars, WorkExperience } from '@/components';
-import { Archive, BookOpen, BriefCase, Envelope } from '@/icons';
+import Link from 'next/link';
+import DotSculpture from '@/components/DotSculpture';
+import { experience } from '@/lib/experience';
 
-export const metadata = {
-  title: 'Ritvik Thakur — Software Engineer',
-  description: 'Software Engineer · CS + Math @ UMD. Building full-stack and AI/ML projects with focus on reliability and UX.',
-};
-
-export const sections = [
-  { index: 0, title: 'About Me', id: 'about-me' },
-  { index: 1, title: 'Work Experience', id: 'work-experience' },
-  { index: 2, title: 'Skills', id: 'skills' },
-  { index: 3, title: 'My Work', id: 'my-work' },
-  { index: 4, title: 'Contact Me', id: 'contact' },
+const projects = [
+  { title: 'Digital Closet App', href: '/apps/digital-closet/', description: 'A digital wardrobe with CNN-based outfit recommendations and ~89% retrieval accuracy.', tech: 'React · Node.js · Python · PyTorch' },
+  { title: 'Robust Vision System', href: '/apps/robust-vision/', description: 'Foreground segmentation, panoramic stitching, and stereo depth estimation.', tech: 'Python · NumPy · OpenCV' },
+  { title: 'Drone Face Recognition', href: '/apps/drone-face-recognition/', description: 'Real-time face recognition from DJI drone video feeds.', tech: 'Python · OpenCV · React' },
 ];
 
-interface contentSection {
-  id: string;
-  sectionHeader: {
-    icon: React.ReactNode;
-    title: string;
-    description: React.ReactNode;
-  };
-  mainContent: React.ReactNode;
-}
-
-const content: contentSection[] = [
-  {
-    id: sections[1].id,
-    sectionHeader: {
-      icon: (
-        <>
-          <BriefCase height="28" width="28" />
-          <span className="bg-work_experience_orange icon-blur absolute inset-0 -z-10"></span>
-        </>
-      ),
-      title: 'Work Experience',
-      description: (
-        <div>
-          <span className="text-work_experience_orange">Software Engineer</span> with experience in <span className="text-work_experience_orange">cybersecurity</span>, <span className="text-work_experience_orange">AI/ML</span>, and <span className="text-work_experience_orange">full-stack development</span>
-        </div>
-      ),
-    },
-    mainContent: <WorkExperience />,
-  },
-  {
-    id: sections[2].id,
-    sectionHeader: {
-      icon: (
-        <>
-          <BookOpen height="28" width="28" />
-          <span className="bg-skills_purple icon-blur absolute inset-0 -z-10"></span>
-        </>
-      ),
-      title: 'Skills',
-      description: (
-        <div>
-          <span className="text-skills_purple">Full Stack</span> software developer with experience in <span className="text-skills_purple">Front-End</span> and{' '}
-          <span className="text-skills_purple">Back-End</span> technologies
-        </div>
-      ),
-    },
-    mainContent: <Skills />,
-  },
-  {
-    id: sections[3].id,
-    sectionHeader: {
-      icon: (
-        <>
-          <Archive height="28" width="28" />
-          <span className="bg-my_work_yellow icon-blur absolute inset-0 -z-10"></span>
-        </>
-      ),
-      title: 'My Work',
-      description: (
-        <div>
-          Some of <span className="text-my_work_yellow">my work</span> as a full stack <span className="text-my_work_yellow">web</span> developer
-        </div>
-      ),
-    },
-    mainContent: <MyWork />,
-  },
-  {
-    id: sections[4].id,
-    sectionHeader: {
-      icon: (
-        <>
-          <Envelope height="28" width="28" />
-          <span className="bg-blue-400 icon-blur absolute inset-0 -z-10"></span>
-        </>
-      ),
-      title: 'Contact Me',
-      description: (
-        <div>
-          Get in <span className="text-blue-400">contact</span> and let&apos;s <span className="text-blue-400">work together</span>
-        </div>
-      ),
-    },
-    mainContent: <ContactForm />,
-  },
-];
-
-export default function Index() {
+export default function Home() {
   return (
-    <div className="w-full overflow-y-auto overflow-x-hidden">
-      <GridPattern />
-      <Section id={sections[0].id}>
-        <Container>
-          <div className="min-h-screen relative">
-            <FadeIn className="max-w-5xl pt-40 md:pt-[20vh] 2xl:pt-[30vh]">
-              <h1 className="font-display text-5xl font-medium tracking-tight [text-wrap:balance] sm:text-6xl">
-                Ritvik Thakur<span className="wave">👋</span>
-              </h1>
-              <div className="flex mt-3 mb-1">
-                Looking for a job{' '}
-                <span className="relative flex h-2 w-2 self-center mx-1">
-                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-red-400 opacity-75"></span>
-                  <span className="relative inline-flex rounded-full h-2 w-2 bg-red-500"></span>
-                </span>{' '}
-                / &#8205; <AnimatedTitle />
-              </div>
-              <p className='max-w-3xl'>I’m Ritvik Thakur, a software engineer and CS + Math student at UMD. I build full-stack and AI/ML projects—shipping fast, writing clean, typed code, and focusing on reliability and UX. Recently: cybersecurity automation, data pipelines, and vision/ML systems.</p>
-            </FadeIn>
+    <>
+      <section className="intro" id="about-me" aria-labelledby="intro-title">
+        <div>
+          <h1 id="intro-title">Hi, I’m Ritvik.</h1>
+          <p className="role">Software engineer · CS + Math at UMD.</p>
+          <p className="intro-description">I build full-stack and AI/ML projects. My work spans cybersecurity automation, data pipelines, and computer vision.</p>
+          <div className="inline-links"><a href="https://github.com/Ritz963">GitHub ↗</a><a href="https://www.linkedin.com/in/ritvik-thakur">LinkedIn ↗</a></div>
+        </div>
+        <DotSculpture />
+      </section>
 
-            <Socials />
-            <div className="scroll-down">
-              <span></span>
-              <span></span>
-              <span></span>
-            </div>
-          </div>{' '}
-          <Border />
-          <AboutMe />
-        </Container>
-      </Section>
-
-      <div id="stars-container" className="relative">
-        <Container>
-          <Stars id="stars-container" />
-          {content.map((section: contentSection) => (
-            <Section key={section.id} id={section.id} className="pt-24 mt-28">
-              <Border />
-              <SectionHeader {...section.sectionHeader} />
-              {section.mainContent}
-            </Section>
+      <section id="my-work" className="portfolio-section" aria-labelledby="projects-title">
+        <h2 id="projects-title" className="section-title">Projects</h2>
+        <div className="project-list">
+          {projects.map((project, index) => (
+            <Link className="project-row" href={project.href} key={project.href}>
+              <span className="index" aria-hidden="true">0{index + 1}</span>
+              <div><h3>{project.title}</h3><p>{project.description}</p><span className="tech">{project.tech}</span></div>
+              <span className="project-arrow" aria-hidden="true">↗</span>
+            </Link>
           ))}
-        </Container>
+        </div>
+      </section>
+
+      <section id="work-experience" className="portfolio-section" aria-labelledby="experience-title">
+        <h2 id="experience-title" className="section-title">Experience</h2>
+        <div className="experience-list">
+          {experience.slice(1).map(item => {
+            const [role, company] = item.title.split(' — ');
+            return <details className="experience-row" key={item.title}>
+              <summary><div><h3>{company}</h3><span className="job-role">{role}</span></div><span className="date">{item.date}</span><span className="expand" aria-hidden="true">+</span></summary>
+              <ul>{item.description.map(line => <li key={line}>{line}</li>)}</ul>
+            </details>;
+          })}
+        </div>
+      </section>
+
+      <div className="info-grid">
+        <section className="portfolio-section" aria-labelledby="education-title"><h2 id="education-title" className="section-title">Education</h2><h3>University of Maryland, College Park</h3><p>B.S. Computer Science · Mathematics double major<br />Expected May 2027 · GPA 3.86 / 4.00</p><p className="secondary">Algorithms, Computer Systems, Machine Learning, Computer Vision, Data Science.</p></section>
+        <section id="skills" className="portfolio-section" aria-labelledby="skills-title"><h2 id="skills-title" className="section-title">Skills</h2><dl className="skills"><div><dt>Languages</dt><dd>Python, C, C++, Java, JavaScript, R, HTML/CSS, MIPS</dd></div><div><dt>Frameworks & platforms</dt><dd>React, Node.js, Express, Firebase, AWS, Docker, Apache NiFi, Git, GitHub, Jira</dd></div><div><dt>Data & ML</dt><dd>PyTorch, OpenCV, Pandas, NumPy, Matplotlib, GMM/EM, image segmentation</dd></div></dl></section>
       </div>
-    </div>
+      <section id="contact" className="contact-section"><div><h2>Contact</h2><div className="inline-links"><a href="https://www.linkedin.com/in/ritvik-thakur">LinkedIn ↗</a><a href="https://github.com/Ritz963">GitHub ↗</a></div></div><p className="secondary">English (native) · Hindi (intermediate) · Mandarin (novice)</p></section>
+    </>
   );
 }

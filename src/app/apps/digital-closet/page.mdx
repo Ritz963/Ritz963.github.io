@@ -1,3 +1,4 @@
+import CaseStudy from '@/components/CaseStudy';
 import { AppSolution, Border, Button, Container, FadeIn, FadeInStagger, Section } from '@/components';
 import Image from 'next/image';
 import { digitalCloset } from '../../../../public/projects'
@@ -61,6 +62,8 @@ export const technologies = [
   },
 ];
 
+<CaseStudy title={appData.title} description={appData.description} image={appData.image}>
+
 <Container>
 
 <Border className="my-8" />
@@ -102,9 +105,9 @@ Key features include automatic clothing recognition, brand detection, color anal
 
 ## Technologies
 
-<FadeInStagger className="flex gap-4 mt-6 flex-wrap" faster once>
+<div className="flex gap-4 mt-6 flex-wrap">
   {technologies.map((tech) => (
-    <FadeIn key={tech.name}>
+    <div key={tech.name}>
       <div className="mt-auto">
         <Image
           src={tech.image}
@@ -119,10 +122,12 @@ Key features include automatic clothing recognition, brand detection, color anal
         />
         <h4 className="text-sm font-semibold tracking-tight text-[#525df3] text-center bg-white rounded-full w-min px-2 m-2 mx-auto">{tech.name}</h4>
       </div>
-    </FadeIn>
+    </div>
   ))}
-</FadeInStagger>
+</div>
 
 </Section>
 
 </Container>
+
+</CaseStudy>
