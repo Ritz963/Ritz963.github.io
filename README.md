@@ -16,7 +16,7 @@ npm run build
 python3 -m http.server 3000 --directory out
 ```
 
-The build writes `out/`. All routes use trailing slashes so project and notes URLs work on a static server, including direct visits and refreshes. No server APIs or environment variables are required. Contact links use LinkedIn and GitHub.
+The build writes `out/`. All routes use trailing slashes so project URLs work on a static server, including direct visits and refreshes. No server APIs or environment variables are required. Contact links use LinkedIn and GitHub.
 
 ## Editing
 

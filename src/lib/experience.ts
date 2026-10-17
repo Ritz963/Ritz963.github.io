@@ -1,9 +1,9 @@
 export const experience = [
   {
     title: 'University of Maryland, College Park — B.S. Computer Science; Double Major in Mathematics',
-    date: 'Expected May 2027',
+    date: '',
     description: [
-      'GPA: 3.86/4.00',
+      'GPA: 3.76/4.00',
       'Relevant coursework: Algorithms; Computer Systems; Machine Learning; Computer Vision; Data Science',
     ],
     image: { url: '/work/umd-logo.png', height: 96, width: 96, className: 'rounded-none' },

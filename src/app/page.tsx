@@ -14,7 +14,7 @@ export default function Home() {
       <section className="intro" id="about-me" aria-labelledby="intro-title">
         <div>
           <h1 id="intro-title">Hi, I’m Ritvik.</h1>
-          <p className="role">Software engineer · CS + Math at UMD.</p>
+          <p className="role">Software engineer · MEng at Cornell.</p>
           <p className="intro-description">I build full-stack and AI/ML projects. My work spans cybersecurity automation, data pipelines, and computer vision.</p>
           <div className="inline-links"><a href="https://github.com/Ritz963">GitHub ↗</a><a href="https://www.linkedin.com/in/ritvik-thakur">LinkedIn ↗</a></div>
         </div>
@@ -48,7 +48,7 @@ export default function Home() {
       </section>
 
       <div className="info-grid">
-        <section className="portfolio-section" aria-labelledby="education-title"><h2 id="education-title" className="section-title">Education</h2><h3>University of Maryland, College Park</h3><p>B.S. Computer Science · Mathematics double major<br />Expected May 2027 · GPA 3.86 / 4.00</p><p className="secondary">Algorithms, Computer Systems, Machine Learning, Computer Vision, Data Science.</p></section>
+        <section className="portfolio-section" aria-labelledby="education-title"><h2 id="education-title" className="section-title">Education</h2><h3>Cornell University</h3><p>Master of Engineering (MEng)</p><h3>University of Maryland, College Park</h3><p>B.S. Computer Science · Mathematics double major<br />GPA 3.76 / 4.00</p><p className="secondary">Algorithms, Computer Systems, Machine Learning, Computer Vision, Data Science.</p></section>
         <section id="skills" className="portfolio-section" aria-labelledby="skills-title"><h2 id="skills-title" className="section-title">Skills</h2><dl className="skills"><div><dt>Languages</dt><dd>Python, C, C++, Java, JavaScript, R, HTML/CSS, MIPS</dd></div><div><dt>Frameworks & platforms</dt><dd>React, Node.js, Express, Firebase, AWS, Docker, Apache NiFi, Git, GitHub, Jira</dd></div><div><dt>Data & ML</dt><dd>PyTorch, OpenCV, Pandas, NumPy, Matplotlib, GMM/EM, image segmentation</dd></div></dl></section>
       </div>
       <section id="contact" className="contact-section"><div><h2>Contact</h2><div className="inline-links"><a href="https://www.linkedin.com/in/ritvik-thakur">LinkedIn ↗</a><a href="https://github.com/Ritz963">GitHub ↗</a></div></div><p className="secondary">English (native) · Hindi (intermediate) · Mandarin (novice)</p></section>
