@@ -21,6 +21,7 @@ The build writes `out/`. All routes use trailing slashes so project URLs work on
 ## Editing
 
 - Home page and skills: `src/app/page.tsx`
+- Work experience animation: `src/components/ExperienceEntry.tsx`
 - Work experience: `src/lib/experience.ts`
 - Case studies: `src/app/apps/*/page.mdx`
 - Appearance: `src/app/globals.css`
