@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import DotSculpture from '@/components/DotSculpture';
+import ExperienceEntry from '@/components/ExperienceEntry';
 import { experience } from '@/lib/experience';
 
 const projects = [
@@ -37,13 +38,7 @@ export default function Home() {
       <section id="work-experience" className="portfolio-section" aria-labelledby="experience-title">
         <h2 id="experience-title" className="section-title">Experience</h2>
         <div className="experience-list">
-          {experience.slice(1).map(item => {
-            const [role, company] = item.title.split(' — ');
-            return <details className="experience-row" key={item.title}>
-              <summary><div><h3>{company}</h3><span className="job-role">{role}</span></div><span className="date">{item.date}</span><span className="expand" aria-hidden="true">+</span></summary>
-              <ul>{item.description.map(line => <li key={line}>{line}</li>)}</ul>
-            </details>;
-          })}
+          {experience.slice(1).map(item => <ExperienceEntry key={item.title} title={item.title} date={item.date} description={item.description} />)}
         </div>
       </section>
 

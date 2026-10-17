@@ -40,13 +40,13 @@ h1 { font-size: clamp(34px, 4.5vw, 44px); font-weight: 500; line-height: 1.2; le
 .tech { display: block; font: 11px/1.6 'Courier New', monospace; color: var(--soft); margin-top: 7px; }
 .project-arrow { font-size: 21px; }
 .experience-row { border-bottom: 1px solid var(--rule); }
-.experience-row summary { display: grid; grid-template-columns: 1fr auto 14px; gap: 22px; align-items: center; padding: 18px 0; cursor: pointer; list-style: none; }
-.experience-row summary::-webkit-details-marker { display: none; }
+.experience-toggle { display: grid; grid-template-columns: 1fr auto 14px; gap: 22px; align-items: center; padding: 18px 0; cursor: pointer; list-style: none; }
+.experience-toggle::-webkit-details-marker { display: none; }
 .experience-row h3 { font-size: 15px; margin: 0 0 1px; font-weight: 400; }
 .job-role, .date { color: var(--soft); font-size: 12px; }
 .date { white-space: nowrap; }
 .expand { color: var(--soft); font-size: 19px; }
-.experience-row[open] .expand { transform: rotate(45deg); }
+.experience-row.is-open .expand { transform: rotate(45deg); }
 .experience-row ul { list-style: disc; padding: 0 20px 20px; margin: 0; color: var(--soft); font-size: 13px; max-width: 730px; }
 .experience-row li + li { margin-top: 6px; }
 .info-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 50px; }
@@ -93,7 +93,7 @@ h1 { font-size: clamp(34px, 4.5vw, 44px); font-weight: 500; line-height: 1.2; le
   .sculpture-controls button { min-height: 44px; }
   .project-row { gap: 10px; grid-template-columns: 23px 1fr 16px; }
   .project-row h3 { font-size: 18px; }
-  .experience-row summary { grid-template-columns: 1fr 14px; gap: 3px 12px; }
+  .experience-toggle { grid-template-columns: 1fr 14px; gap: 3px 12px; }
   .experience-row .date { grid-row: 2; }
   .experience-row .expand { grid-column: 2; grid-row: 1 / span 2; }
   .info-grid { grid-template-columns: 1fr; gap: 0; }
@@ -103,3 +103,13 @@ h1 { font-size: clamp(34px, 4.5vw, 44px); font-weight: 500; line-height: 1.2; le
 @media (prefers-reduced-motion: reduce) { *, *::before, *::after { scroll-behavior: auto !important; transition: none !important; animation: none !important; } }
 
 .case-study .technology-label { color: var(--ink); background: var(--hover); border: 1px solid var(--rule); border-radius: 999px; font-size: 12px; font-weight: 400; line-height: 1.5; text-align: center; width: max-content; max-width: 100%; padding: 3px 10px; margin: 10px auto 0; }
+
+.experience-row .experience-heading { margin: 0; }
+.experience-toggle { width: 100%; border: 0; background: transparent; color: var(--ink); text-align: left; font-weight: 400; }
+.experience-toggle .company { display: block; font-size: 15px; }
+.experience-toggle .job-role { display: block; }
+.experience-panel { display: grid; grid-template-rows: 0fr; opacity: 0; visibility: hidden; transition: grid-template-rows 260ms ease, opacity 200ms ease, visibility 260ms; }
+.experience-row.is-open .experience-panel { grid-template-rows: 1fr; opacity: 1; visibility: visible; }
+.experience-panel-inner { min-height: 0; overflow: hidden; }
+.experience-row .expand { transition: transform 220ms ease; }
+@media (prefers-reduced-motion: reduce) { .experience-panel, .experience-row .expand { transition: none; } }
