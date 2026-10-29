@@ -79,9 +79,9 @@ export default function DotSculpture() {
       }}>
       Interactive geometric dot sculpture.
     </canvas>
-    <div className="sculpture-controls" aria-label="Sculpture controls">
-      {shapes.map((item, i) => <button key={item} type="button" aria-pressed={shape === item} onClick={() => setShape(item)}>{String(i + 1).padStart(2, '0')} / {item}</button>)}
-      <button type="button" aria-label="Rotate sculpture" onClick={() => { rotation.current.y += Math.PI / 6; drawRef.current(); }}>↻</button>
+    <div className="sculpture-controls" role="group" aria-label="Sculpture controls">
+      {shapes.map((item) => <button key={item} type="button" aria-pressed={shape === item} onClick={() => setShape(item)}>{item}</button>)}
+      <button type="button" aria-label="Rotate sculpture" onClick={() => { rotation.current.y += Math.PI / 6; drawRef.current(); }}><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" aria-hidden="true"><path d="M20 7v5h-5M20 12a8 8 0 1 0-2 5" /></svg></button>
     </div>
   </div>;
 }

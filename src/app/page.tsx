@@ -26,11 +26,10 @@ export default function Home() {
       <section id="my-work" className="portfolio-section" aria-labelledby="projects-title">
         <h2 id="projects-title" className="section-title">Projects</h2>
         <div className="project-list">
-          {projects.map((project, index) => (
+          {projects.map((project) => (
             <Link className="project-row" href={project.href} key={project.href}>
-              <span className="index" aria-hidden="true">0{index + 1}</span>
               <div><h3>{project.title}</h3><p>{project.description}</p><span className="tech">{project.tech}</span></div>
-              <span className="project-arrow" aria-hidden="true">↗</span>
+              <svg className="project-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.25" aria-hidden="true"><path d="M5 19 19 5M5 5h14v14" /></svg>
             </Link>
           ))}
         </div>
