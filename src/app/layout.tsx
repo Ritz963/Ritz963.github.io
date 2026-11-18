@@ -1,6 +1,9 @@
 import type { Metadata } from 'next';
-import Link from 'next/link';
+import { Inter, Instrument_Serif } from 'next/font/google';
 import './globals.css';
+
+const sans = Inter({ subsets: ['latin'], variable: '--font-sans', display: 'swap' });
+const serif = Instrument_Serif({ subsets: ['latin'], weight: '400', style: ['normal', 'italic'], variable: '--font-serif', display: 'swap' });
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://ritz963.github.io'),
@@ -11,12 +14,8 @@ export const metadata: Metadata = {
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
-  return <html lang="en"><body>
+  return <html lang="en" className={`${sans.variable} ${serif.variable}`}><body>
     <a className="skip-link" href="#main">Skip to content</a>
-    <div className="site-shell">
-      <header className="site-header"><Link className="wordmark" href="/">Ritvik Thakur</Link><nav aria-label="Main navigation"><Link href="/#my-work">Projects</Link><Link href="/#work-experience">Experience</Link><Link href="/#contact">Contact</Link></nav></header>
-      <main id="main">{children}</main>
-      <footer className="site-footer"><span>© {new Date().getFullYear()} Ritvik Thakur</span></footer>
-    </div>
+    <main id="main">{children}</main>
   </body></html>;
 }
