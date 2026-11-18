@@ -7,7 +7,7 @@ export default function Home() {
       <div className="home-left">
         <div>
           <p className="status"><span className="status-dot" aria-hidden="true" />Open to new-grad SWE roles · 2027</p>
-          <h1 className="home-name">Ritvik<br /><em>Thakur</em></h1>
+          <h1 className="home-name">Ritvik<br />Thakur</h1>
           <p className="home-bio">
             Software engineer building full-stack and AI/ML systems. Most recently at Amazon, where I built a Java/AWS Lambda
             system that surfaces removal reasons for 1M+ monthly takedowns.

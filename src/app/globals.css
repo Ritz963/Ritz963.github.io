@@ -29,8 +29,7 @@ button { font: inherit; color: inherit; cursor: pointer; }
 .status { display: inline-flex; align-items: center; gap: 10px; margin: 0 0 36px; font-size: 13px; color: var(--soft); }
 .status-dot { width: 7px; height: 7px; border-radius: 50%; background: var(--live); animation: pulse 2.4s var(--ease) infinite; }
 @keyframes pulse { 0% { box-shadow: 0 0 0 0 color-mix(in srgb, var(--live) 45%, transparent); } 70%, 100% { box-shadow: 0 0 0 9px transparent; } }
-.home-name { font: 400 clamp(64px, 7.6vw, 118px)/.92 var(--serif); letter-spacing: -.025em; margin: 0 0 28px; }
-.home-name em { color: var(--soft); }
+.home-name { font: 600 clamp(56px, 6.6vw, 104px)/.95 var(--sans); letter-spacing: -.05em; margin: 0 0 28px; }
 .home-bio { font-size: 16px; line-height: 1.65; color: var(--soft); max-width: 420px; margin: 0; }
 .dot-field { display: block; width: 100%; flex: 1 1 0; min-height: 110px; max-height: 240px; color: var(--ink); touch-action: pan-y; cursor: crosshair; }
 .home-meta { display: grid; grid-template-columns: auto 1fr; gap: 8px 28px; font-size: 13px; margin: 0; }
